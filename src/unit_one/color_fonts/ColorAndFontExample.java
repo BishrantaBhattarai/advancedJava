@@ -21,10 +21,10 @@ public class ColorAndFontExample extends JPanel {
         GradientPaint gradient = new GradientPaint(
                 0,
                 0,
-                Color.RED,
+                Color.BLACK,
                 getWidth(),
                 getHeight(),
-                Color.BLUE);
+                Color.YELLOW);
         ((Graphics2D) g).setPaint(gradient);
         g.drawString("Gradient Text", 50, 100);
     }

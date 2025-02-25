@@ -18,19 +18,20 @@ public class KeyEventHandling {
         textField.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent keyEvent) {
-//                if (e.getKeyChar() == 'a') {
-//                    JOptionPane.showMessageDialog(null, "The 'a' key was typed!");
-//                }
+                if (keyEvent.getKeyChar() == 'm') {
+                    JOptionPane.showMessageDialog(null, "The 'a' key was typed!");
+                }
             }
 
             @Override
             public void keyPressed(KeyEvent keyEvent) {
-                //JOptionPane.showMessageDialog(null, String.format("%s was pressed", keyEvent.getKeyChar()));
+              // JOptionPane.showMessageDialog(null, String.format("%s was pressed", keyEvent.getKeyChar()));
+                //JOptionPane.showMessageDialog(null, String.format("%s was pressed %s", textField.getText(),"students"));
             }
 
             @Override
             public void keyReleased(KeyEvent keyEvent) {
-                JOptionPane.showMessageDialog(null, String.format("%s was relsease", textField.getText()));
+                //JOptionPane.showMessageDialog(null, String.format("%s was relsease", textField.getText()));
 
             }
         });
