@@ -12,36 +12,36 @@ public class ScrollableUpdatableResultSetDemo {
                 password);
              Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                      ResultSet.CONCUR_UPDATABLE);
-             ResultSet rs = stmt.executeQuery("SELECT id, name, salary FROM employee")) {
+             ResultSet rs = stmt.executeQuery("SELECT id, name, salaray FROM employee")) {
             // Displaying initial records
             System.out.println("Initial Records:");
             while (rs.next()) {
-                System.out.println(rs.getInt("id") + " - " + rs.getString("name") + " - " + rs.getDouble("salary"));
+                System.out.println(rs.getInt("id") + " - " + rs.getString("name") + " - " + rs.getDouble("salaray"));
             }
             // Move back to first row and update salary
             if (rs.first()) {
-                double newSalary = rs.getDouble("salary") + 1000;
-                rs.updateDouble("salary", newSalary);
+                double newSalary = rs.getDouble("salaray") + 1000;
+                rs.updateDouble("salaray", newSalary);
                 rs.updateRow(); // Save the update
                 System.out.println("\nUpdated first row salary to: " + newSalary);
             }
             // Insert a new row
             rs.moveToInsertRow();
             rs.updateInt("id", 101); // Set ID (ensure it's unique)
-            rs.updateString("name", "New Employee");
-            rs.updateDouble("salary", 5000);
+            rs.updateString("name", "Runche Prasad Phuya;l");
+            rs.updateDouble("salaray", 7000);
             rs.insertRow();
             System.out.println("\nInserted a new employee.");
             // Move to last row and display data
             if (rs.last()) {
                 System.out.println("\nLast Record After Insertion:");
-                System.out.println(rs.getInt("id") + " - " + rs.getString("name") + " - " + rs.getDouble("salary"));
+                System.out.println(rs.getInt("id") + " - " + rs.getString("name") + " - " + rs.getDouble("salaray"));
             }
             // Iterate in reverse order
             System.out.println("\nRecords in Reverse Order:");
             rs.afterLast(); // Move to after last row
             while (rs.previous()) {
-                System.out.println(rs.getInt("id") + " - " + rs.getString("name") + " - " + rs.getDouble("salary"));
+                System.out.println(rs.getInt("id") + " - " + rs.getString("name") + " - " + rs.getDouble("salaray"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
